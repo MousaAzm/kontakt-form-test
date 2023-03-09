@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak-sidan</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .contact-card {
+            padding: 15px;
+            width: 50%;
+            height: 100%;
+            border-radius: 8px;
+            min-height: 500px;
+            border: 1px solid #f3f3f3;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            background-color: #FFFFFF;
+        }
+
+        .content-select-option {
+            padding: 15px 0;
+            width: 100%;
+        }
+
+        .form-field,
+        .form-file-upload {
+            flex-direction: column;
+            padding: 5px 0;
+        }
+
+        .form-row {
+            display: flex;
+        }
+
+        .select-option:focus,
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: 1px solid #9a9a9a;
+        }
+
+        .select-option {
+            height: 32px;
+            border: 1px solid #d4d5d5;
+            padding: 5px 10px 5px 10px;
+            min-width: 150px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .content-select-option h4 {
+            padding: 5px 0;
+        }
+
+        .form-field label,
+        .form-file-upload .file-label {
+            padding: 5px 0;
+        }
+
+        .form-field input {
+            line-height: 24px;
+            height: 32px;
+            border: 1px solid #d4d5d5;
+            padding: 5px 10px;
+            min-width: 150px;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .form-field textarea {
+            border: 1px solid #d4d5d5;
+            padding: 5px 10px;
+            min-width: 150px;
+            width: 100%;
+            max-width: 716px;
+            border-radius: 4px;
+        }
+
+        .form-file-upload label {
+            cursor: pointer;
+            border: 1px solid #95c7ea;
+            text-align: center;
+            padding: 5px;
+            width: 150px;
+            max-width: 200px;
+            overflow: hidden;
+            border-radius: 4px;
+            background-color: #c3ddef;
+            transition: all .3s linear;
+        }
+        .form-file-upload label:hover {
+            background-color: #83bde7;
+        }
+
+        .form-contact ul {
+            list-style-type: none;
+        }
+
+        .form-contact ul li {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            width: 50%;
+            border: 1px solid #d4d5d5;
+            border-radius: 4px;
+            margin: 3px 0;
+            transition: all .3s linear;
+        }
+
+        .form-contact ul li:hover {
+            background-color: #dddddd;
+        }
+
+        .form-contact ul li p {
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .form-contact ul li span {
+            cursor: pointer;
+        }
+
+        .form-contact ul li span:after {
+            display: inline-block;
+            content: "\00d7";
+        }
+
+        .btn_row {
+            padding: 20px 0;
+        }
+
+        .btn_row input {
+            padding: 9px 16px;
+            margin-bottom: 0;
+            text-align: center;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgb(55 60 80 / 5%);
+            background-color: #cfcdcd;
+            transition: all 0.3s;
+        }
+
+        .btn_row input:hover {
+            background-color: #6f6e6e;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="contact-card">
+            <div class="content-select-option">
+                <h4>Vad kan vi hjälpa dig med?</h6>
+                    <select class="select-option select-option-help">
+                        <option value="default">Välja</option>
+                        <option value="productquestions">Produktfrågor</option>
+                        <option value="addorder">Orderläggning</option>
+                        <option value="deliveryquestions">Leveransfrågor</option>
+                        <option value="payment">Betalning</option>
+                        <option value="returnorder">Ångrat köp</option>
+                        <option value="shippingdamage">Reklamation - Fraktskada</option>
+                        <option value="productfailed">Reklamation - Produktfel</option>
+                        <option value="other">Övrigt</option>
+                    </select>
+            </div>
+            <form class="form-contact" action="">
+                <div class="form-field form-row">
+                    <label for="contactname">Namn:</label>
+                    <input type="text" id="contactname" name="contactname" required>
+                </div>
+                <div class="form-field form-row">
+                    <label for="email-address">E-post:</label>
+                    <input type="text" id="email-address" name="email-address" required>
+                </div>
+                <div class="form-field hide_field field-2023001" style="display: none;">
+                    <label for="ordernr">Ordernummer:</label>
+                    <input type="text" id="ordernr" name="ordernr">
+                </div>
+                <div class="form-field hide_field field-2023002" style="display: none;">
+                    <label for="telnumber">Telefonnummer:</label>
+                    <input type="text" id="telnumber" name="telnumber" required>
+                </div>
+                <div class="form-field hide_field field-2023003" style="display: none;">
+                    <label for="price-link">Länk till priser för returer:</label>
+                    <input type="text" id="price-link" name="price-link" required>
+                </div>
+                <div class="form-field hide_field field-2023004" style="display: none;">
+                    <label for="call-me">Kan vi lova att vi ringer upp inom 2 vardagar?</label>
+                    <select class="select-option" name="call-me" id="call-me" required>
+                        <option value="">Välja</option>
+                        <option value="Yes">Ja</option>
+                        <option value="No">Nej</option>
+                    </select>
+                </div>
+                <div class="form-field hide_field field-2023005" style="display: none;">
+                    <label for="receipt-damage">Noterades skadan på kvittensen?</label>
+                    <select class="select-option" name="receipt-damage" id="receipt-damage" required>
+                        <option value="">Välja</option>
+                        <option value="Yes">Ja</option>
+                        <option value="No">Nej</option>
+                    </select>
+                </div>
+                <div class="form-field hide_field field-2023006" style="display: none;">
+                    <label for="payment-method">Betalningsmetod:</label>
+                    <select class="select-option" name="payment-method" id="payment-method" required>
+                        <option value="">Välja</option>
+                        <option value="Faktura">Faktura</option>
+                        <option value="BankKort">BankKort</option>
+                        <option value="Swish">Swish</option>
+                    </select>
+                </div>
+                <div class="form-field hide_field field-2023007" style="display: none;">
+                    <label for="product-interested">Vilka/vilken produkt/produkter är du intresserad av?</label>
+                    <textarea type="text" id="product-interested" name="product-interested" cols="30"
+                        rows="4" required></textarea>
+                </div>
+                <div class="form-field hide_field field-2023008" style="display: none;">
+                    <label for="return-order">Vilka varor önskar du returnera alternativt hela ordern?</label>
+                    <textarea type="text" id="return-order" name="return-order" cols="30"
+                        rows="4" required></textarea>
+                </div>
+                <div class="form-field hide_field field-2023009" style="display: none;">
+                    <label for="damaged-goods">Vilka/vilka varor är skadade?</label>
+                    <textarea type="text" id="damaged-goods" name="damaged-goods" cols="30" rows="4" required></textarea>
+                </div>
+                <div class="form-field hide_field field-20230010" style="display: none;">
+                    <label for="complain-goods">Vilka/vilka varor reklameras?</label>
+                    <textarea type="text" id="complain-goods" name="complain-goods" cols="30" rows="4" required></textarea>
+                </div>
+                <div class="form-field hide_field field-20230011" style="display: none;">
+                    <label for="discover-fault">När upptäcktes felet??</label>
+                    <textarea type="text" id="discover-fault" name="discover-fault" cols="30" rows="4" required></textarea>
+                </div>
+                <div class="form-field hide_field field-20230012" style="display: none;">
+                    <label for="info-invoice-pay">Kort info om att vi kan lägga beställningar mot
+                        faktura och delbetalning.</label>
+                    <textarea type="text" id="info-invoice-pay" name="info-invoice-pay"
+                        cols="30" rows="4" required></textarea>
+                </div>
+                <div class="form-field hide_field field-20230013" style="display: none;">
+                    <label for="fault-description">Felbeskrivning:</label>
+                    <textarea type="text" id="fault-description" name="fault-description" cols="30" rows="6" required></textarea>
+                </div>
+                <div class="form-field hide_field field-20230014" style="display: none;">
+                    <label for="description">Beskrivning/frågeställning etc:</label>
+                    <textarea type="text" id="description" name="description" cols="30" rows="6" required></textarea>
+                </div>
+
+                <div class="form-file-upload hide_field multiple-attachment" style="display: none;">
+                    <span class="file-label">Bilagor:</span>
+                    <label for="attachments">Ladda upp fil/filer</label>
+                    <input type="file" id="attachments" name="attachments" style="visibility:hidden;" multiple>
+                </div>
+                <div class="form-file-upload hide_field file-field file-dmg" style="display: none;">
+                    <span class="file-label">Bild på skada:</span>
+                    <label for="file-01">Ladda upp fil</label>
+                    <input type="file" id="file-01" name="file-01" style="visibility:hidden;">
+                </div>
+                <div class="form-file-upload hide_field file-field file-full" style="display: none;">
+                    <span class="file-label">Helhetsbild på produkten:</span>
+                    <label for="file-02">Ladda upp fil</label>
+                    <input type="file" id="file-02" name="file-02" style="visibility:hidden;">
+                </div>
+                <div class="form-file-upload hide_field file-field file-pack" style="display: none;" >
+                    <span class="file-label">Bild på emballage:</span>
+                    <label for="file-03">Ladda upp fil</label>
+                    <input type="file" id="file-03" name="file-03" style="visibility:hidden;">
+                </div>
+                <div class="form-file-upload hide_field file-field file-marking" style="display: none;">
+                    <span class="file-label">Bild på märkning/etikett:</span>
+                    <label for="file-04">Ladda upp fil</label>
+                    <input type="file" id="file-04" name="file-04" style="visibility:hidden;">
+                </div>
+
+                <div class="btn_row">
+                    <input type="submit" name="submit" value="Skicka">
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script type="text/javascript">
+        const select = document.querySelector('.select-option-help');
+        const hideElement = document.querySelectorAll('.hide_field');
+        const multiplefile = document.querySelector('.multiple-attachment');
+        const files = document.querySelectorAll('.file-field');
+
+        select.addEventListener('change', (e) => {
+            e.preventDefault();
+            const value = e.target.value;
+            hideElement.forEach(element => {
+                element.style.display = "none";
+            });
+            switch (true) {
+                case value == "productquestions":
+                    document.querySelector('.field-2023007').style.display = "flex";
+                    document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.multiple-attachment').style.display = "flex";
+                    break;
+                case value == "addorder":
+                    document.querySelector('.field-2023002').style.display = "flex";
+                    document.querySelector('.field-2023004').style.display = "flex";
+                    document.querySelector('.field-2023007').style.display = "flex";
+                    document.querySelector('.field-20230012').style.display = "flex";
+                    break;
+                case value == "deliveryquestions":
+                    document.querySelector('.field-2023001').style.display = "flex";
+                    document.querySelector('.field-20230014').style.display = "flex";
+                    break;
+                case value == "payment":
+                    document.querySelector('.field-2023001').style.display = "flex";
+                    document.querySelector('.field-2023006').style.display = "flex";
+                    document.querySelector('.field-20230014').style.display = "flex";
+                    break;
+                case value == "returnorder":
+                    document.querySelector('.field-2023001').style.display = "flex";
+                    document.querySelector('.field-2023003').style.display = "flex";
+                    document.querySelector('.field-2023008').style.display = "flex";
+                    break;
+                case value == "shippingdamage":
+                    document.querySelector('.field-2023001').style.display = "flex";
+                    document.querySelector('.field-2023005').style.display = "flex";
+                    document.querySelector('.field-2023009').style.display = "flex";
+                    document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.file-dmg').style.display = "flex";
+                    document.querySelector('.file-full').style.display = "flex";
+                    document.querySelector('.file-pack').style.display = "flex";
+                    break;
+                case value == "productfailed":
+                    document.querySelector('.field-2023001').style.display = "flex";
+                    document.querySelector('.field-20230010').style.display = "flex";
+                    document.querySelector('.field-20230011').style.display = "flex";
+                    document.querySelector('.field-20230013').style.display = "flex";
+                    document.querySelector('.file-dmg').style.display = "flex";
+                    document.querySelector('.file-full').style.display = "flex";
+                    document.querySelector('.file-marking').style.display = "flex";
+                    break;
+                case value == "other":
+                    document.querySelector('.field-20230014').style.display = "flex";
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        multiplefile.querySelector('input').addEventListener('change', (e) => {
+            if (e.target.files.length > 1) {
+                multiplefile.querySelector('label').innerHTML = e.target.files.length + " filer";
+            } else {
+                multiplefile.querySelector('label').innerHTML = e.target.files[0].name;
+            }
+        });
+
+        files.forEach((element) => {
+            element.querySelector('input').addEventListener("change", (e) => {
+                element.querySelector('label').innerHTML = e.target.files[0].name;
+            });
+        });
+
+    </script>
+</body>
+
+</html>
