@@ -293,7 +293,7 @@
                     <input type="file" id="file-04" name="file-04" style="visibility:hidden;">
                 </div>
 
-                <div class="btn_row">
+                <div class="btn_row" style="display: none;">
                     <input type="submit" name="submit" value="Skicka">
                 </div>
             </form>
@@ -318,26 +318,31 @@
                     document.querySelector('.field-2023007').style.display = "flex";
                     document.querySelector('.field-20230014').style.display = "flex";
                     document.querySelector('.multiple-attachment').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "addorder":
                     document.querySelector('.field-2023002').style.display = "flex";
                     document.querySelector('.field-2023004').style.display = "flex";
                     document.querySelector('.field-2023007').style.display = "flex";
                     document.querySelector('.field-20230012').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "deliveryquestions":
                     document.querySelector('.field-2023001').style.display = "flex";
                     document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "payment":
                     document.querySelector('.field-2023001').style.display = "flex";
                     document.querySelector('.field-2023006').style.display = "flex";
                     document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "returnorder":
                     document.querySelector('.field-2023001').style.display = "flex";
                     document.querySelector('.field-2023003').style.display = "flex";
                     document.querySelector('.field-2023008').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "shippingdamage":
                     document.querySelector('.field-2023001').style.display = "flex";
@@ -347,6 +352,7 @@
                     document.querySelector('.file-dmg').style.display = "flex";
                     document.querySelector('.file-full').style.display = "flex";
                     document.querySelector('.file-pack').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "productfailed":
                     document.querySelector('.field-2023001').style.display = "flex";
@@ -356,9 +362,14 @@
                     document.querySelector('.file-dmg').style.display = "flex";
                     document.querySelector('.file-full').style.display = "flex";
                     document.querySelector('.file-marking').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "other":
                     document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.btn_row').style.display = "block";
+                    break;
+                case value == "default":
+                    document.querySelector('.btn_row').style.display = "none";
                     break;
                 default:
                     break;
