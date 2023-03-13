@@ -37,9 +37,14 @@
             width: 100%;
         }
 
+        
         .form-field,
         .form-file-upload {
             flex-direction: column;
+            padding: 5px 0;
+        }
+
+        .text-info {
             padding: 5px 0;
         }
 
@@ -164,6 +169,16 @@
             background-color: #6f6e6e;
             color: #fff;
         }
+
+        .text-info p{
+           padding-top: 20px;
+           padding-bottom: 10px;
+           font-size: 18px;
+        }
+        .text-info span{
+           font-size: 17px;
+        }
+
     </style>
 </head>
 
@@ -175,10 +190,10 @@
                     <select class="select-option select-option-help">
                         <option value="default">Välja</option>
                         <option value="productquestions">Produktfrågor</option>
-                        <option value="addorder">Orderläggning</option>
+                        <option value="cancellation">Avbokning</option>
                         <option value="deliveryquestions">Leveransfrågor</option>
                         <option value="payment">Betalning</option>
-                        <option value="returnorder">Ångrat köp</option>
+                        <option value="returnorder">Retur - Ångrat köp</option>
                         <option value="shippingdamage">Reklamation - Fraktskada</option>
                         <option value="productfailed">Reklamation - Produktfel</option>
                         <option value="other">Övrigt</option>
@@ -191,80 +206,101 @@
                 </div>
                 <div class="form-field form-row">
                     <label for="email-address">E-post:</label>
-                    <input type="text" id="email-address" name="email-address" required>
+                    <input type="text" id="email-address" name="email" required>
                 </div>
-                <div class="form-field hide_field field-2023001" style="display: none;">
+                <div class="form-field hide_field field-ordernr" style="display: none;">
                     <label for="ordernr">Ordernummer:</label>
                     <input type="text" id="ordernr" name="ordernr">
                 </div>
-                <div class="form-field hide_field field-2023002" style="display: none;">
+                <div class="form-field hide_field field-telnumber" style="display: none;">
                     <label for="telnumber">Telefonnummer:</label>
                     <input type="text" id="telnumber" name="telnumber" required>
                 </div>
-                <div class="form-field hide_field field-2023003" style="display: none;">
-                    <label for="price-link">Länk till priser för returer:</label>
-                    <input type="text" id="price-link" name="price-link" required>
-                </div>
-                <div class="form-field hide_field field-2023004" style="display: none;">
+             
+                <div class="form-field hide_field field-call-me" style="display: none;">
                     <label for="call-me">Kan vi ringa upp dig?</label>
                     <select class="select-option" name="call-me" id="call-me" required>
-                        <option value="">Välja</option>
+                        <option value="default">Välja</option>
                         <option value="Yes">Ja</option>
                         <option value="No">Nej</option>
                     </select>
                 </div>
-                <div class="form-field hide_field field-2023005" style="display: none;">
+                <div class="form-field hide_field field-receipt-damage" style="display: none;">
                     <label for="receipt-damage">Noterades skadan på kvittensen?</label>
                     <select class="select-option" name="receipt-damage" id="receipt-damage" required>
-                        <option value="">Välja</option>
+                        <option value="default">Välja</option>
                         <option value="Yes">Ja</option>
                         <option value="No">Nej</option>
                     </select>
                 </div>
-                <div class="form-field hide_field field-2023006" style="display: none;">
+                <div class="form-field hide_field field-payment-method" style="display: none;">
                     <label for="payment-method">Betalningsmetod:</label>
                     <select class="select-option" name="payment-method" id="payment-method" required>
-                        <option value="">Välja</option>
+                        <option value="default">Välja</option>
                         <option value="Faktura">Faktura</option>
                         <option value="BankKort">BankKort</option>
                         <option value="Swish">Swish</option>
                     </select>
                 </div>
-                <div class="form-field hide_field field-2023007" style="display: none;">
+                <div class="form-field hide_field field-received-order" style="display: none;">
+                    <label for="received-order">Har du tagit emot din order?</label>
+                    <select class="select-option" name="receivedorder " id="received-order" required>
+                        <option value="default">Välja</option>
+                        <option value="Yes">Ja</option>
+                        <option value="No">Nej</option>
+                    </select>
+                </div>
+                <div class="form-field hide_field field-product-interested" style="display: none;">
                     <label for="product-interested">Vilka/vilken produkt/produkter är du intresserad av?</label>
                     <textarea type="text" id="product-interested" name="product-interested" cols="30"
                         rows="4" required></textarea>
                 </div>
-                <div class="form-field hide_field field-2023008" style="display: none;">
+                <div class="form-field hide_field field-return-order" style="display: none;">
                     <label for="return-order">Vilka varor önskar du returnera alternativt hela ordern?</label>
                     <textarea type="text" id="return-order" name="return-order" cols="30"
                         rows="4" required></textarea>
                 </div>
-                <div class="form-field hide_field field-2023009" style="display: none;">
+                <div class="form-field hide_field field-damaged-goods" style="display: none;">
                     <label for="damaged-goods">Vilka/vilka varor är skadade?</label>
                     <textarea type="text" id="damaged-goods" name="damaged-goods" cols="30" rows="4" required></textarea>
                 </div>
-                <div class="form-field hide_field field-20230010" style="display: none;">
+                <div class="form-field hide_field field-complain-goods" style="display: none;">
                     <label for="complain-goods">Vilka/vilka varor reklameras?</label>
                     <textarea type="text" id="complain-goods" name="complain-goods" cols="30" rows="4" required></textarea>
                 </div>
-                <div class="form-field hide_field field-20230011" style="display: none;">
+                <div class="form-field hide_field field-discover-fault" style="display: none;">
                     <label for="discover-fault">När upptäcktes felet??</label>
                     <textarea type="text" id="discover-fault" name="discover-fault" cols="30" rows="4" required></textarea>
                 </div>
-                <div class="form-field hide_field field-20230012" style="display: none;">
+                <div class="form-field hide_field field-info-invoice-pay" style="display: none;">
                     <label for="info-invoice-pay">Kort info om att vi kan lägga beställningar mot
                         faktura och delbetalning.</label>
                     <textarea type="text" id="info-invoice-pay" name="info-invoice-pay"
                         cols="30" rows="4" required></textarea>
                 </div>
-                <div class="form-field hide_field field-20230013" style="display: none;">
+                <div class="form-field hide_field field-fault-description" style="display: none;">
                     <label for="fault-description">Felbeskrivning:</label>
                     <textarea type="text" id="fault-description" name="fault-description" cols="30" rows="6" required></textarea>
                 </div>
-                <div class="form-field hide_field field-20230014" style="display: none;">
-                    <label for="description">Beskrivning/frågeställning etc:</label>
+                <div class="form-field hide_field field-description-q" style="display: none;">
+                    <label for="description-q">Beskrivning/frågeställning etc:</label>
+                    <textarea type="text" id="description-q" name="descriptionq" cols="30" rows="6" required></textarea>
+                </div>
+
+                <div class="form-field hide_field field-description" style="display: none;">
+                    <label for="description">Beskrivning av ärende:</label>
                     <textarea type="text" id="description" name="description" cols="30" rows="6" required></textarea>
+                </div>
+
+                <div class="text-info hide_field text-cancellation" style="display: none;">
+                    <p>Observera att ingen order är avbokad innan du mottagit bekräftelse.</p>
+                </div>
+
+                <div class="text-info hide_field text-pricelist" style="display: none;">
+                    <p>Prislista:</p>
+                    <span>
+                    Sverige <br> Ombud 249 kr <br> Hemleverans upp till 150 kg 749 kr <br> Sändningar över 150 kg prissätts individuellt, kontakta oss för prisuppgifter. 
+                    </span>
                 </div>
 
                 <div class="form-file-upload hide_field multiple-attachment" style="display: none;">
@@ -315,57 +351,60 @@
             });
             switch (true) {
                 case value == "productquestions":
-                    document.querySelector('.field-2023007').style.display = "flex";
-                    document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.field-product-interested').style.display = "flex";
+                    document.querySelector('.field-description-q').style.display = "flex";
                     document.querySelector('.multiple-attachment').style.display = "flex";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
-                case value == "addorder":
-                    document.querySelector('.field-2023002').style.display = "flex";
-                    document.querySelector('.field-2023004').style.display = "flex";
-                    document.querySelector('.field-2023007').style.display = "flex";
-                    document.querySelector('.field-20230012').style.display = "flex";
+                case value == "cancellation":
+                    document.querySelector('.field-ordernr').style.display = "flex";
+                    document.querySelector('.field-telnumber').style.display = "flex";
+                    document.querySelector('.text-cancellation').style.display = "block";
+                    document.querySelector('.field-info-invoice-pay').style.display = "flex";
+                    document.querySelector('.field-description').style.display = "flex";
+                    document.querySelector('.multiple-attachment').style.display = "flex";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "deliveryquestions":
-                    document.querySelector('.field-2023001').style.display = "flex";
-                    document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.field-ordernr').style.display = "flex";
+                    document.querySelector('.field-description-q').style.display = "flex";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "payment":
-                    document.querySelector('.field-2023001').style.display = "flex";
-                    document.querySelector('.field-2023006').style.display = "flex";
-                    document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.field-ordernr').style.display = "flex";
+                    document.querySelector('.field-payment-method').style.display = "flex";
+                    document.querySelector('.field-description-q').style.display = "flex";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "returnorder":
-                    document.querySelector('.field-2023001').style.display = "flex";
-                    document.querySelector('.field-2023003').style.display = "flex";
-                    document.querySelector('.field-2023008').style.display = "flex";
+                    document.querySelector('.field-ordernr').style.display = "flex";
+                    document.querySelector('.field-received-order').style.display = "flex";
+                    document.querySelector('.field-return-order').style.display = "flex";
+                    document.querySelector('.text-pricelist').style.display = "block";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "shippingdamage":
-                    document.querySelector('.field-2023001').style.display = "flex";
-                    document.querySelector('.field-2023005').style.display = "flex";
-                    document.querySelector('.field-2023009').style.display = "flex";
-                    document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.field-ordernr').style.display = "flex";
+                    document.querySelector('.field-damaged-goods').style.display = "flex";
+                    document.querySelector('.field-receipt-damage').style.display = "flex";
+                    document.querySelector('.field-description-q').style.display = "flex";
                     document.querySelector('.file-dmg').style.display = "flex";
                     document.querySelector('.file-full').style.display = "flex";
                     document.querySelector('.file-pack').style.display = "flex";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "productfailed":
-                    document.querySelector('.field-2023001').style.display = "flex";
-                    document.querySelector('.field-20230010').style.display = "flex";
-                    document.querySelector('.field-20230011').style.display = "flex";
-                    document.querySelector('.field-20230013').style.display = "flex";
+                    document.querySelector('.field-ordernr').style.display = "flex";
+                    document.querySelector('.field-complain-goods').style.display = "flex";
+                    document.querySelector('.field-discover-fault').style.display = "flex";
+                    document.querySelector('.field-fault-description').style.display = "flex";
                     document.querySelector('.file-dmg').style.display = "flex";
                     document.querySelector('.file-full').style.display = "flex";
                     document.querySelector('.file-marking').style.display = "flex";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "other":
-                    document.querySelector('.field-20230014').style.display = "flex";
+                    document.querySelector('.field-description-q').style.display = "flex";
                     document.querySelector('.btn_row').style.display = "block";
                     break;
                 case value == "default":
